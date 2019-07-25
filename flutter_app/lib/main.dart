@@ -22,8 +22,15 @@ class StreamExampleHome extends StatefulWidget {
   _StreamExampleHomeState createState() => _StreamExampleHomeState();
 }
   //object from Class TickerController
- TickerController tickerController= TickerController();
+ final TickerController tickerController= TickerController();
+
 class _StreamExampleHomeState extends State<StreamExampleHome> {
+  //Close State [Close Object StreamController]
+  @override
+  void dispose() {
+    tickerController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
